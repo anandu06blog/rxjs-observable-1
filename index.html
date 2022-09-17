@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RxJS Playground</title>
+  </head>
+  <script src="rxjs-observable.js">
+    //Arrow function
+    simpleArrowFunction = () => {
+      console.log('test');
+    };
+    simpleArrowFunction();
+
+    //Arrow function with arguments
+
+    getModulus = (a,b) => {
+      return a%b
+    }
+    console.log("getModulus  " , getModulus(4,3))
+  </script>
+  <h1>Simple Arrow Function</h1>
+  <pre>
+  //Arrow function
+  
+  simpleArrowFunction = () => {
+    console.log('test');
+  };
+  <code> simpleArrowFunction();</code>
+  </pre>
+
+  <pre style="background-color: black">
+  //Arrow function with arguments
+  
+  getModulus = (a,b) => {
+    return a%b
+  }
+  </pre>
+
+  <pre>
+  // Open the console in the bottom right to see results.
+
+  const observable = new Observable((subscriber) => {
+    subscriber.next(1);
+    subscriber.next(2);
+    subscriber.next(3);
+    setTimeout(() => {
+      subscriber.next(4);
+      // subscriber.complete();
+    }, 1000);
+  });
+  
+  
+
+  </pre>
+  <p>
+  observable.subscribe((d) => {
+    console.log(d);
+  });
+  </p>
+</html>
